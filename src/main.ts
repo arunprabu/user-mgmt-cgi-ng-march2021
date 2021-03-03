@@ -8,5 +8,6 @@ if (environment.production) {
   enableProdMode();
 }
 
+// Every angular app should be bootstrapped with a Module - AppModule
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
