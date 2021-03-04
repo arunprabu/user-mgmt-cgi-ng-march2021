@@ -11,9 +11,13 @@ import { UsersComponent } from './users/components/users.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'concepts', component: ConceptsComponent },
-  { path: 'users', component: UsersComponent },
-  { path: 'users/add', component: AddUserComponent },
-  { path: 'users/1', component: UserDetailsComponent },
+  {
+    path: 'users', children: [
+      { path: '', component: UsersComponent },
+      { path: 'add', component: AddUserComponent },
+      { path: ':id', component: UserDetailsComponent },  // URL Param is id
+    ]
+  },
   { path: 'about', component: AboutComponent }
 ];
 
