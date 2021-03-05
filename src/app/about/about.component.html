@@ -1,1 +1,21 @@
-<p>about works!</p>
+<div>
+  <h1>Pipes</h1>
+
+  <p>{{today}}</p>
+
+  <p>{{today | date }}</p>
+
+  <!-- paremeterised pipe-->
+  <p>{{today | date: 'dd-MMMM-yyyy hh:mm:ss a'}}</p>
+
+  <p>{{randomText}}</p>
+
+  <p>{{randomText | uppercase }}</p>
+
+  <!-- chaining pipes -->
+  <p>{{today | date: 'dd-MMMM-yyyy hh:mm:ss a' | uppercase }}</p>
+
+  
+
+
+</div>

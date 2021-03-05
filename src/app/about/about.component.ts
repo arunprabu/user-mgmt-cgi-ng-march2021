@@ -8,6 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
 
+  today: Date = new Date();
+  // test
+
+  randomText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. ';
+
   constructor() { }
 
   ngOnInit(): void {
