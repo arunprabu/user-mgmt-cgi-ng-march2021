@@ -37,16 +37,46 @@ export class UserService {
     return this.http.get(this.API_URL)
       .pipe(map ((res: any) => {   // 3. get the res from the rest api 
         console.log(res);
+        // enrich 
+        // remove, sort, adding, filtering
         return res; // 4. send the res back to the comp
       }));
       
   }
 
   // fetch user details
+  getUserById(userId: string) {
+    console.log(userId);
+
+    const USER_DETAILS_API_URL = `${this.API_URL}/${userId}`;
+    return this.http.get(USER_DETAILS_API_URL)
+      .pipe( map( (res: any) => {
+        console.log(res);
+        return res;
+      }));
+  }
 
   // update user
+  updateUser(userData: any){
+    console.log(userData);
 
-  // delete user
+    const UPDATE_USER_API_URL = `${this.API_URL}/${userData.id}`;
+    return this.http.put(UPDATE_USER_API_URL, userData)
+      .toPromise()
+      .then( (res: any) => {
+        console.log(res);
+        return res;
+      })
+      .catch( (err: any) => {
+        console.log(err);
+        return err;
+      })
+      .finally( () => {
+        console.log('It is over');
+      });
+  }
+
+  // TODO: delete user
 
 
 
